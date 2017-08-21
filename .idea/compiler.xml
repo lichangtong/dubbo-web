@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ivan-api" />
+        <module name="ivan-core" />
+        <module name="ivan-dubbo-server" />
+        <module name="ivan-dubbo-web" />
+        <module name="ivan-entity" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="ivan" target="1.5" />
+      <module name="ivan-api" target="1.5" />
+      <module name="ivan-core" target="1.5" />
+      <module name="ivan-dubbo-server" target="1.5" />
+      <module name="ivan-dubbo-web" target="1.5" />
+      <module name="ivan-entity" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

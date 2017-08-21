@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ivan.iml" filepath="$PROJECT_DIR$/ivan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivan-api/ivan-api.iml" filepath="$PROJECT_DIR$/ivan-api/ivan-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivan-core/ivan-core.iml" filepath="$PROJECT_DIR$/ivan-core/ivan-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivan-dubbo-server/ivan-dubbo-server.iml" filepath="$PROJECT_DIR$/ivan-dubbo-server/ivan-dubbo-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivan-dubbo-web/ivan-dubbo-web.iml" filepath="$PROJECT_DIR$/ivan-dubbo-web/ivan-dubbo-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivan-entity/ivan-entity.iml" filepath="$PROJECT_DIR$/ivan-entity/ivan-entity.iml" />
+    </modules>
+  </component>
+</project>

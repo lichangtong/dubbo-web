@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ivan-dubbo-web:war">
+    <output-path>$PROJECT_DIR$/ivan-dubbo-web/target</output-path>
+    <root id="archive" name="ivan-dubbo-web.war">
+      <element id="artifact" artifact-name="ivan-dubbo-web:war exploded" />
+    </root>
+  </artifact>
+</component>
