@@ -9,14 +9,58 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="ivan-dubbo-server"/>
 
-    <!-- 使用zookeeper广播注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="192.168.2.112:2181"/>
+    <!-- 使用zookeeper广播注册中心暴露服务地址 address可以Zookeeper集群配置，地址可以多个以逗号隔开等  -->
+    <!-- check 注册中心不存在时，是否报错  -->
+    <!-- subscribe 是否向此注册中心订阅服务，如果设为false，将只注册，不订阅  -->
+    <!-- timeout 注册中心请求超时时间(毫秒)。  -->
+    <!-- register 是否向此注册中心注册服务，如果设为false，将只订阅，不注册。  -->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" check="" timeout="" subscribe="" register=""/>
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
+
     <!--
         官方注释：扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类。
         测试发现：此处package不填写包名会无法注册Service，扫描全包需填写包首即可或者填写至类的上一级目录。
      -->
-    <dubbo:annotation package="com"/>
+
+    <!--<dubbo:annotation package="com.ivan.service.impl"/>-->
+    <!--&lt;!&ndash; 具体的实现bean &ndash;&gt;-->
+    <!--<bean id="demoService" class="com.ivan.service.impl.UserServiceImpl"/>-->
+    <!--&lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;-->
+    <!--<dubbo:service interface="com.ivan.api.UserService" ref="demoService"/>-->
+
+    <!--dubbo:service标签的一些属性说明：-->
+    <!--1）interface服务接口的路径-->
+    <!--2）ref 引用对应的实现类的Bean的ID-->
+    <!--3）registry向指定注册中心注册，在多个注册中心时使用，值为<dubbo:registry>的id属性，多个注册中心ID用逗号分隔，如果不想将该服务注册到任何registry，可将值设为N/A-->
+    <!--4）register 默认true ，该协议的服务是否注册到注册中心。-->
+
+    <bean id="demoService" class="com.ivan.service.impl.UserServiceImpl"/>
+    <dubbo:service interface="com.ivan.api.UserService" ref="demoService"/>
+
+    <!--<dubbo:service/>     服务配置，用于暴露一个服务，定义服务的元信息，一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心。-->
+    <!--<dubbo:reference/>   引用配置，用于创建一个远程服务代理，一个引用可以指向多个注册中心。-->
+    <!--<dubbo:protocol/>    协议配置，用于配置提供服务的协议信息，协议由提供方指定，消费方被动接受。-->
+    <!--<dubbo:application/> 应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。-->
+    <!--<dubbo:module/>      模块配置，用于配置当前模块信息，可选。-->
+    <!--<dubbo:registry/>    注册中心配置，用于配置连接注册中心相关信息。-->
+    <!--<dubbo:monitor/>     监控中心配置，用于配置连接监控中心相关信息，可选。-->
+    <!--<dubbo:provider/>    提供方的缺省值，当ProtocolConfig和ServiceConfig某属性没有配置时，采用此缺省值，可选。-->
+    <!--<dubbo:consumer/>    消费方缺省配置，当ReferenceConfig某属性没有配置时，采用此缺省值，可选。-->
+    <!--<dubbo:method/>      方法配置，用于ServiceConfig和ReferenceConfig指定方法级的配置信息。-->
+    <!--<dubbo:argument/>    用于指定方法参数配置。-->
+
+    <!--  <dubbo:registry/>
+      <dubbo:annotation/>
+      <dubbo:application name=""/>
+      <dubbo:monitor/>
+      <dubbo:provider/>
+      <dubbo:consumer/>
+      <dubbo:protocol/>
+      <dubbo:service interface=""/>
+      <dubbo:reference interface=""/>
+      <dubbo:annotation/>
+      <dobbo:module name=""/>-->
+
 </beans>

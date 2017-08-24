@@ -1,6 +1,7 @@
 package com.ivan.service.impl;
 
 import com.alibaba.dubbo.common.json.JSON;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.ivan.User;
 import com.ivan.api.UserService;
 import org.slf4j.Logger;
@@ -14,6 +15,8 @@ import java.util.List;
  * @author lichangtong
  * @create 2017-08-21 21:16
  **/
+
+@Service(version = "1.0.1")
 public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -22,8 +25,8 @@ public class UserServiceImpl implements UserService {
         logger.info("开始查询所有用户信息");
 
         List<User> listUser = new ArrayList<User>();
-        User user1 = new User("1", "ivan", "123456");
-        User user2 = new User("2", "jack", "123456");
+        User user1 = new User("4", "ivan", "123456");
+        User user2 = new User("5", "jack", "123456");
 
         listUser.add(user1);
         listUser.add(user2);

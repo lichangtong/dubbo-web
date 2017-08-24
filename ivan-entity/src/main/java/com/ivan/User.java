@@ -1,10 +1,12 @@
 package com.ivan;
 
+import java.io.Serializable;
+
 /**
  * @author lichangtong
  * @create 2017-08-21 21:13
  **/
-public class User {
+public class User implements Serializable{
     /**
      *
      */
