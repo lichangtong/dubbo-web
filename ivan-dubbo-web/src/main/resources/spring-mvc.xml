@@ -13,7 +13,7 @@
         自动扫描controller包下的所有类，如果@Controller注入为bean
         并将bean依赖注入，即dubbo服务端暴露的Service注入到Controller中
     -->
-    <dubbo:annotation package="com" />
+    <dubbo:annotation package="com"/>
 
     <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter"
@@ -31,7 +31,7 @@
         <property name="messageConverters">
             <list>
                 <!-- json转换器 -->
-                <ref bean="mappingJacksonHttpMessageConverter" />
+                <ref bean="mappingJacksonHttpMessageConverter"/>
             </list>
         </property>
     </bean>
@@ -40,17 +40,17 @@
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
-                  value="org.springframework.web.servlet.view.JstlView" />
-        <property name="prefix" value="/WEB-INF/views/" />
-        <property name="suffix" value=".jsp" />
+                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="defaultEncoding" value="UTF-8" />
+        <property name="defaultEncoding" value="UTF-8"/>
         <!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
-        <property name="maxUploadSize" value="200000" />
+        <property name="maxUploadSize" value="200000"/>
     </bean>
 
     <!-- SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException -->
@@ -61,7 +61,8 @@
             <props>
                 <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/jsp/error_fileupload.jsp页面 -->
                 <prop
-                        key="org.springframework.web.multipart.MaxUploadSizeExceededException">error_fileupload</prop>
+                        key="org.springframework.web.multipart.MaxUploadSizeExceededException">error_fileupload
+                </prop>
             </props>
         </property>
     </bean>

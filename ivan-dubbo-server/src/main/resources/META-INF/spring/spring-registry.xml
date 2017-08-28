@@ -14,11 +14,12 @@
     <!-- subscribe 是否向此注册中心订阅服务，如果设为false，将只注册，不订阅  -->
     <!-- timeout 注册中心请求超时时间(毫秒)。  -->
     <!-- register 是否向此注册中心注册服务，如果设为false，将只订阅，不注册。  -->
-    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" check="" timeout="" subscribe="" register=""/>
+    <!--check="" timeout="" subscribe="" register=""-->
+    <dubbo:registry id="reg" protocol="zookeeper" address="192.168.2.112:2181"/>
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20882"/>
-
+    <dubbo:protocol name="dubbo" port="20882" id="mydubbo"/>
+    <dubbo:provider protocol="mydubbo" registry="reg"/>
     <!--
         官方注释：扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类。
         测试发现：此处package不填写包名会无法注册Service，扫描全包需填写包首即可或者填写至类的上一级目录。
@@ -38,6 +39,7 @@
 
     <bean id="demoService" class="com.ivan.service.impl.UserServiceImpl"/>
     <dubbo:service interface="com.ivan.api.UserService" ref="demoService"/>
+
 
     <!--<dubbo:service/>     服务配置，用于暴露一个服务，定义服务的元信息，一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心。-->
     <!--<dubbo:reference/>   引用配置，用于创建一个远程服务代理，一个引用可以指向多个注册中心。-->
