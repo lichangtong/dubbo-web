@@ -10,15 +10,15 @@ import java.io.IOException;
  * @create 2017-08-21 19:49
  **/
 public class ServerMain {
-//    public static void main(String[] args) throws IOException {
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-//                new String[]{"spring-registry.xml"});
-//        context.start();
-//
-//        System.out.println("按任意键退出！！！");
-//        System.in.read(); // 按任意键退出
-//
-//
-//
-//    }
+    public static void main(String[] args) throws IOException {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                new String[]{"META-INF/spring/spring-registry.xml"});
+        context.start();
+
+        System.out.println("按任意键退出！！！");
+        System.in.read(); // 按任意键退出
+
+
+
+    }
 }

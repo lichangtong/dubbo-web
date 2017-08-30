@@ -7,13 +7,11 @@ import com.ivan.api.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -36,9 +34,9 @@ public class UserController {
         return demoService.getUsers();
     }
 
-    @RequestMapping("/one")
+    @RequestMapping("/one/{bid}")
     @ResponseBody
-    public User getUserById(@RequestParam("bid") String bid) {
+    public User getUserById(@PathVariable String bid) {
         return demoService.getUserByPrimaryKey(bid);
     }
 }

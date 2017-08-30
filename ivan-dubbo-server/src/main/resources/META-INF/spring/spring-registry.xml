@@ -15,10 +15,10 @@
     <!-- timeout 注册中心请求超时时间(毫秒)。  -->
     <!-- register 是否向此注册中心注册服务，如果设为false，将只订阅，不注册。  -->
     <!--check="" timeout="" subscribe="" register=""-->
-    <dubbo:registry id="reg" protocol="zookeeper" address="192.168.2.112:2181"/>
+    <dubbo:registry id="reg" protocol="zookeeper" address="127.0.0.1:2181"/>
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20882" id="mydubbo"/>
+    <dubbo:protocol name="dubbo" port="20883" id="mydubbo"/>
     <dubbo:provider protocol="mydubbo" registry="reg"/>
     <!--
         官方注释：扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类。

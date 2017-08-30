@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public User getUserByPrimaryKey(String id) {
-        User user = new User("1", "ivan", "123456");
+        User user = new User("10", "ivan6666", "123456444444");
         logger.info("开始查询用户信息，查询条件ID为:" + id);
         logger.info("查询结果：" + user.toString());
         return user;
