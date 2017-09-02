@@ -68,14 +68,14 @@ public class NetFileZipUtils {
         File file = new File(filePath);
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
-        zip(getInputStream(path), zipOutputStream, "123.jpg");
+        zip(getInputStream(path), zipOutputStream, "李畅通.jpg");
         IOUtil.closeQuietly(zipOutputStream, fileOutputStream);
         return file;
     }
 
     public static void main(String[] args) {
         try {
-            save("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504114141449&di=d51a1167d32bd68152749c5bd11be340&imgtype=0&src=http%3A%2F%2Fhuo360.com%2Fuploads%2F2015%2F06%2F1433172341127041.jpg", "G:/test/test.zip");
+            save("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504114141449&di=d51a1167d32bd68152749c5bd11be340&imgtype=0&src=http%3A%2F%2Fhuo360.com%2Fuploads%2F2015%2F06%2F1433172341127041.jpg", "E:\\test.zip");
         } catch (Exception e) {
             e.printStackTrace();
         }
